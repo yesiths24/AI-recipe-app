@@ -1,0 +1,137 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	height: 100%; /* Use 100% instead of 100vh to avoid resizing issues */
+	width: 100%;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/a.jpg");
+	background-size: cover;
+	background-position: 10% 0; /* Shift the background image to the right */
+	background-attachment: fixed; /* Keep the background fixed during scroll */
+	opacity: 0.5;
+	z-index: -1;
+}
+
+#video-container {
+	position: relative; /* This makes it a positioning context for absolutely positioned children */
+	width: 100vw; /* Cover the full viewport width */
+	height: 100vh; /* Cover the full viewport height */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#video {
+	width: 100%; /* Make video width fill the container */
+	height: 100%; /* Make video height fill the container */
+	object-fit: cover; /* Cover the area without stretching */
+}
+
+#button {
+	position: absolute;
+	bottom: 20px; /* Adjust this value as needed to position the button from the bottom */
+	left: 50%; /* Center the button horizontally */
+	transform: translateX(-50%); /* Adjust horizontal positioning to truly center */
+	background-color: #e3b8a9;
+}
+
+#output {
+	display: none;
+	justify-content: left;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 1.1rem;
+	font-family: "Roboto", sans-serif;
+	font-size: 1.1rem;
+	width: 100%;
+}
+
+#output h1 {
+	font-size: 1.5rem;
+}
+
+#output h2 {
+	font-size: 1.3rem;
+}
+
+#buttonContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#snapNewPhoto {
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	margin-bottom: 25px;
+}
+
+#loadingContainer {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px; /* Adjust based on your preference */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    position: fixed; /* Or absolute, depending on your needs */
+    top: 0px;
+    left: 0;
+    transform: translateY(-13%); /* Move up by 10% of the viewport height */
+}
+
+#loading {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+#loadingContainer h1 {
+    font-size: 2.2rem;
+    font-family: "Satisfy", sans-serif;
+    text-align: center; /* Ensure text is centered if container is wider */
+}
+
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+#loadingContainer h1 {
+    animation: blink 2s linear infinite;
+}
+
+#clickMessage {
+	position: absolute;
+	top: 5%; /* Adjust as needed */
+	left: 0; /* Align to the left edge */
+	width: 100%; /* Make it take the full width */
+	text-align: center; /* Center the text within */
+	color: #e3b8a9;
+	font-size: 30px;
+	z-index: 2; /* Ensure it's above the video */
+	font-family: "Roboto", sans-serif;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SnapCook</title>
+		<link rel="icon" href="../images/titlebar-icon.png" type="image/png" />
+		<link href="output.css" type="text/css" rel="stylesheet" />
+		<link href="index.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div id="F">
+			<div id="video-container">
+				<video id="video" autoplay muted></video>
+				<div id="clickMessage">Capture image of food items!</div>
+				<button id="button" class="w-32 h-32 bg-red-500 text-white rounded-full flex items-center justify-center border-4 border-white cursor-pointer text-lg relative">
+					<i class="fas fa-camera" style="font-size: 3rem;"></i>
+				</button>
+			</div>
+			<img id="img" display="none" />
+		</div>
+		<div id="loadingContainer">
+			<h1>Finding Delicious Recipes...</h1>
+			<div id="loading"></div>	
+		</div>	
+		<div id="output">
+			<div id="foodItems">
+				<br>
+			</div>
+			<br>
+			<div id="recipes">
+			<br>
+			</div>
+			<div id="buttonContainer">
+				<button id="snapNewPhoto" class="bg-red-500 text-white rounded-full p-2 mt-4 cursor-pointer">
+					Snap Another Picture
+				</button>
+			</div>
+		<script src="index.js" type="module"></script>
+	</body>
+</html>
